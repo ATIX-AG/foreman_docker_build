@@ -1,5 +1,8 @@
 # Building foreman RPM packages using docker container
 
+Some more information regarding this project can be found here:
+https://www.atix.de/blog/building-foreman-rpm-packages-using-docker-container
+
 In case you don't have docker installed, please add the following repo:
 ```
 [docker]
