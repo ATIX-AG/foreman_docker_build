@@ -1,12 +1,14 @@
 # Building foreman RPM packages using docker container
 
 In case you don't have docker installed, please add the following repo:
-  [docker]
-  name=Docker Repository
-  baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
-  enabled=1
-  gpgcheck=1
-  gpgkey=https://yum.dockerproject.org/gpg
+```
+[docker]
+name=Docker Repository
+baseurl=https://yum.dockerproject.org/repo/main/centos/$releasever/
+enabled=1
+gpgcheck=1
+gpgkey=https://yum.dockerproject.org/gpg
+```
 
 Afterwards, install docker with the following command:
 ```sh
@@ -27,11 +29,6 @@ docker pull centos
 For using the foreman_docker_build script you will also need to install rpm-build and ruby:
 ```sh
 yum install rpm-build ruby git
-```
-
-Now it's time to checkout the foreman_docker_build github repository and take a look at the README:
-```sh
-git clone https://github.com/ATIX-AG/foreman_docker_build.git
 ```
 
 Change to the foreman_docker_build and start building your foreman package
