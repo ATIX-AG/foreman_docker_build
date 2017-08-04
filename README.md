@@ -39,7 +39,7 @@ cd foreman_docker_build
 
 That's all. After the build is ready, the RPMs are located in the directory "foreman/RPM".
 
-Available options:
+## Available options
 
  -n <name>           Specify the name of the package you want to build. Identical with the git repo name 
  
