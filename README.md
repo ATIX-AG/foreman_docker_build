@@ -40,9 +40,12 @@ cd foreman_docker_build
 That's all. After the build is ready, the RPMs are located in the directory "foreman/RPM".
 
 Available options:
+
  -n <name>           Specify the name of the package you want to build. Identical with the git repo name 
+ 
  -b <branch>         Branch or tag you want to build from the package (must be available in git repo - of course)
                      Default: master
+                     
  -p <packaging_name> Name of the package within foreman-packaging (like, foreman-tasks is the name but 
                      "rubygem-foreman-tasks is the name within foreman-packakging. If not given, same as name
 
