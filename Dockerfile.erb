@@ -1,0 +1,26 @@
+FROM centos:7
+
+ADD yum.conf /etc/
+
+# Install the dependencies for the build
+# Bacsic setup for an rpm build
+RUN yum -y -t install git tar bzip2 rpm-build 
+RUN yum -y -t install scl-utils-build tfm-build make
+
+RUN yum clean all
+RUN groupadd -g 1000 rpmbuild && useradd -u 1000 -g rpmbuild rpmbuild
+ADD build_rpm.sh /usr/bin/build_rpm.sh
+
+ADD <%= @spec %> /root/<%= @spec %>
+ADD rpmmacros /root/.rpmmacros
+RUN yum-builddep -y /root/<%=@spec %> 
+RUN yum clean all 
+RUN rm -f /root/<%= @spec %>
+
+# Setup the user for the rpmbuild
+USER rpmbuild
+RUN mkdir -p ~/rpmbuild/{BUILD,RPMS,SOURCES,SPECS,SRPMS}
+ADD rpmmacros /home/rpmbuild/.rpmmacros
+
+# Build the RPM
+CMD /usr/bin/build_rpm.sh

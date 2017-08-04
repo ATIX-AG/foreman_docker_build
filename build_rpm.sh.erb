@@ -1,0 +1,12 @@
+#!/bin/bash -x
+
+set -e
+
+cd /source
+
+cp -v /source/<%= @spec %> ~/rpmbuild/SPECS/
+cp -v /source/* ~/rpmbuild/SOURCES/ 
+
+cd ~/rpmbuild/SPECS/
+
+rpmbuild -ba <%= @spec %>
