@@ -53,7 +53,7 @@ That's all. After the build is ready, the RPMs are located in the directory "for
                      "rubygem-foreman-tasks is the name within foreman-packakging. If not given, same as name
                      
 ## Copyright
-Copyright (c) ATIX AG - http://www.atix.de
+Copyright (c) 2017 ATIX AG - http://www.atix.de
 
 This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
 
